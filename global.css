@@ -1,0 +1,14 @@
+*{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+  --background: #121214;
+  --primary: #4C1D95;
+  --secundary: #27272A;
+  --white: #FFFFFF;
+  --shadowViolet: 1px 4px 4px #8B5CF6;
+  --shadowGrey: 2px 4px 4px #4F4C56;
+} 
