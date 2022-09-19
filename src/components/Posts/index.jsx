@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { Card } from "../Card"
-import { Plus } from "phosphor-react"
-import { PostsSection, StyledIcon } from "./styles"
+import { PostsSection } from "./styles"
 import api from "../../services/api"
 
 export function Posts() { 
@@ -27,9 +26,6 @@ export function Posts() {
           <Card key={post.id} data={post}/>          
         ))
       }
-      <StyledIcon>
-        <Plus size={60} color='var(--white)'  />
-      </StyledIcon>
     </PostsSection>
   )
 }
