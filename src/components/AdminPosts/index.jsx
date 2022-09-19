@@ -5,12 +5,18 @@ import { Plus } from "phosphor-react"
 import { StyledIcon, StyledMain } from "./styles";
 import api from "../../services/api";
 import { Drawer } from "../Drawer";
-import { Form } from "react-router-dom";
 import { Forms } from "../Forms";
 
 export function AdminPosts() {
   const [posts, setPosts] = useState([]) 
   const [showDrawer, setShowDrawer] = useState(false)
+  const [form, setForm] = useState(
+    {
+      userId: '',
+      title: '',
+      body: ''
+    }
+  )
   
   useEffect(()=> {    
     async function getPosts() {
@@ -25,6 +31,27 @@ export function AdminPosts() {
     getPosts()
   },[])
 
+  async function createPost() {
+    try {
+      await api.post('/posts', form)
+    }
+    catch {
+      console.error(err)
+    }
+  }
+
+  function handleChange(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    createPost()
+  }
+
   return(
     <StyledMain>
       {
@@ -35,7 +62,10 @@ export function AdminPosts() {
       {
         showDrawer && 
         <Drawer handleClick={setShowDrawer}>
-          <Forms />
+          <Forms 
+           handleChange={handleChange}
+           handleSubmit={handleSubmit}
+          />
         </Drawer>
       }
       <StyledIcon>
