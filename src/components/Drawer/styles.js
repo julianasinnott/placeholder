@@ -7,8 +7,9 @@ export const StyledDrawer = styled.div`
   top: 0;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding: 40px 30px;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
   background-color: var(--secundary);
   max-width: 400px;
   width: 100%;
