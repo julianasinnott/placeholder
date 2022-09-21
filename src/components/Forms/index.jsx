@@ -5,7 +5,7 @@ import { Select } from "../Select";
 import { StyledForm } from "./styles";
 import api from "../../services/api";
 
-export function Forms({handleChange, handleSubmit, data, update}) {
+export function Forms({handleChange, handleSubmit, data, update, loading}) {
   const [users, setUsers] = useState([])
   const defaultValue = update? data.userId : 'default'
 
@@ -54,7 +54,7 @@ export function Forms({handleChange, handleSubmit, data, update}) {
         required
       />
       <StyledButton>
-        Enviar
+       {loading ? 'Enviando...' : 'Enviar'} 
       </StyledButton>
     </StyledForm>
   )
