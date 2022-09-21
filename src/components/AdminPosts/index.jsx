@@ -121,6 +121,7 @@ export function AdminPosts() {
       {
         showConfirmModal &&
         <ConfirmModal
+          horizontalPosition={successMessage ? "calc(50% - 200px)" : "calc(50% - 150px)"}
           titleModal={successMessage? 'Enviado com sucesso!' : 'Excluir Post?'}
           Xicon={successMessage? false : true}
           closeModal={handleClick}

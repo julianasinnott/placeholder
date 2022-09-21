@@ -19,7 +19,9 @@ export const StyledModal = styled.div`
   gap: 12px;
   position: fixed;
   top: 50%;
-  right: calc(50% - 150px);
+  right: ${
+    props => props.horizontalPosition 
+  };
 `
 
 export const StyledModalTitle = styled.div`

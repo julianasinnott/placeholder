@@ -1,11 +1,11 @@
 import { Check, X } from "phosphor-react";
 import { StyledModalBackground, StyledIcon, StyledModal, StyledModalOptions, StyledModalTitle } from "./styles";
 
-export function ConfirmModal({titleModal, closeModal, confirmDeleteItem, Xicon}) {
+export function ConfirmModal({titleModal, closeModal, confirmDeleteItem, Xicon, horizontalPosition}) {
 
   return(
     <StyledModalBackground>
-      <StyledModal>
+      <StyledModal horizontalPosition={horizontalPosition}>
         <StyledModalTitle>
           {titleModal}
         </StyledModalTitle>
