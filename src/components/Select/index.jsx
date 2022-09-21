@@ -1,7 +1,8 @@
 import { StyledLabel, StyledLabelText } from "../../globalStyle";
 import { StyledSelect } from "./style";
 
-export function Select({title, name, handleChange, users}) {
+export function Select({title, name, defaultValue, handleChange, data}) {
+
   return(
     <>
     <StyledLabel>
@@ -9,20 +10,20 @@ export function Select({title, name, handleChange, users}) {
         {title}
       </StyledLabelText>
       <StyledSelect
-        defaultValue='Usuário'
+        defaultValue={defaultValue}
         name={name}
         onChange={handleChange}
       >
-        <option value='Usuário' disabled>
-          Usuário
+        <option value='default' disabled>
+           Selecione...
         </option>
         {
-          users.map(user => (
+          data.map(data => (
             <option
-              value={user.id}
-              key={user.id}
+              value={data.id}
+              key={data.id}
             >
-              {user.name}
+              {data.name}
             </option>
           ))
         }       

@@ -1,7 +1,7 @@
 import { StyledInput, StyledTextarea } from "./style";
 import { StyledLabel, StyledLabelText } from "../../globalStyle";
 
-export function Input({title, type, name, handleChange}) {
+export function Input({title, type, name, handleChange, value}) {
   return(
     <>
       <StyledLabel>
@@ -11,11 +11,13 @@ export function Input({title, type, name, handleChange}) {
       {
         type == 'text' ?
         <StyledInput
-          name={name}  
+          name={name} 
+          value={value} 
           onChange={handleChange}/>
         :
         <StyledTextarea
           name={name}  
+          value={value}
           onChange={handleChange}/>
       } 
       </StyledLabel>
