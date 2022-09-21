@@ -1,15 +1,28 @@
-import { Trash } from "phosphor-react"
-import { StyledCardList, StyledIcon, StyledTitle } from "./styles"
+import { Pencil, Trash } from "phosphor-react"
+import { StyledCardList, StyledDiv, StyledIcon, StyledTitle } from "./styles"
 
-export function CardList({data}) {
+export function CardList({data, deletePost, setShowDrawer, setForm, setUpdate, setPostId}) {
+
+  function handleCLick() {
+    setForm(data)
+    setShowDrawer(true)
+    setUpdate(true)
+    setPostId(data.id)
+  }
+
   return(
     <StyledCardList>
       <StyledTitle>
         {data.title}
       </StyledTitle>
-      <StyledIcon>
-        <Trash />
-      </StyledIcon>
+      <StyledDiv>
+        <StyledIcon>
+          <Pencil onClick={handleCLick} />
+        </StyledIcon>
+        <StyledIcon>
+          <Trash onClick={()=> deletePost(data.id)}/>
+        </StyledIcon>        
+      </StyledDiv>
     </StyledCardList>
   )
 }
