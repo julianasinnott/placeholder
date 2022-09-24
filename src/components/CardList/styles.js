@@ -10,7 +10,7 @@ export const StyledCardList = styled.div`
 `
 export const StyledDiv = styled(StyledCardList)`
   border: none;
-  gap: 4px
+  gap: 8px
 `
 
 export const StyledTitle = styled.span`

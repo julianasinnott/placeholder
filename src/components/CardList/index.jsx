@@ -1,4 +1,5 @@
-import { Pencil, Trash } from "phosphor-react"
+import { Pencil, Trash, Eye } from "phosphor-react"
+import { Link } from "react-router-dom"
 import { StyledCardList, StyledDiv, StyledIcon, StyledTitle } from "./styles"
 
 export function CardList({data, deletePost, setShowDrawer, setForm, setUpdate, setPostId}) {
@@ -16,6 +17,11 @@ export function CardList({data, deletePost, setShowDrawer, setForm, setUpdate, s
         {data.title}
       </StyledTitle>
       <StyledDiv>
+        <Link target="blank" to={`/posts/${data.id}`}>
+          <StyledIcon>
+            <Eye />
+          </StyledIcon>        
+        </Link>
         <StyledIcon>
           <Pencil onClick={handleCLick} />
         </StyledIcon>
