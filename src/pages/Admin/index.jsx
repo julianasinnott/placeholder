@@ -1,4 +1,4 @@
-import { Template } from "../../components/Template";
+import { Template } from "../../components/template";
 import { AdminPosts } from "../../components/AdminPosts";
 
 export function Admin() {

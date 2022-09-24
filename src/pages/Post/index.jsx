@@ -1,7 +1,7 @@
 import { User } from "phosphor-react"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { Template } from "../../components/Template"
+import { Template } from "../../components/template"
 import api from "../../services/api"
 import { StyledLink, StyledSection, StyledPostSection, StyledTitle, StyledDiv, StyledBody } from "./style"
 

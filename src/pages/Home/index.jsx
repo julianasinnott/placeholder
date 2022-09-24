@@ -1,5 +1,5 @@
 import { Posts } from "../../components/Posts";
-import { Template } from "../../components/Template";
+import { Template } from "../../components/template";
 
 export function Home() {
 
