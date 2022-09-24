@@ -1,7 +1,7 @@
 import { User } from "phosphor-react"
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
-import { Template } from '../../components/Template'
+import { useParams } from "react-router-dom"
+import { Template } from "../../components/Template"
 import api from "../../services/api"
 import { StyledLink, StyledSection, StyledPostSection, StyledTitle, StyledDiv, StyledBody } from "./style"
 
@@ -49,7 +49,7 @@ export function Post() {
           </StyledBody>
           {
             comments.map(comment => (
-              <StyledSection padding>
+              <StyledSection key={comment.id} padding>
                 <>
                   <p>{comment.name}</p>
                   {/* <p>{comment.body}</p> */}
