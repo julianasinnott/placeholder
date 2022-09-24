@@ -5,9 +5,14 @@ export const StyledCardList = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   font-size: 20px;
-  padding-bottom: 8px;
+  padding: 0 10px 8px 10px;
   border-bottom: 1px solid var(--secundary);
 `
+export const StyledDiv = styled(StyledCardList)`
+  border: none;
+  gap: 8px
+`
+
 export const StyledTitle = styled.span`
   color: var(--white);
   font-weight: 100;

@@ -5,8 +5,9 @@ import { Select } from "../Select";
 import { StyledForm } from "./styles";
 import api from "../../services/api";
 
-export function Forms({handleChange, handleSubmit}) {
+export function Forms({handleChange, handleSubmit, data, update, loading}) {
   const [users, setUsers] = useState([])
+  const defaultValue = update? data.userId : 'default'
 
   useEffect(()=> {
     async function getUsers() {
@@ -29,13 +30,15 @@ export function Forms({handleChange, handleSubmit}) {
     >
       <Input
         name='title' 
+        value={data.title}
         title='Título'
         type='text'
         handleChange={handleChange}
         required
       />
       <Input 
-        name='body' 
+        name='body'
+        value={data.body}
         title='Conteúdo'
         type='textarea' 
         handleChange={handleChange}
@@ -44,12 +47,14 @@ export function Forms({handleChange, handleSubmit}) {
       <Select 
         name='userId'
         title='Usuário'
-        users={users}
+        data={users}
+        defaultValue={defaultValue}
         handleChange={handleChange} 
+        update={update}
         required
       />
       <StyledButton>
-        Enviar
+       {loading ? 'Enviando...' : 'Enviar'} 
       </StyledButton>
     </StyledForm>
   )
