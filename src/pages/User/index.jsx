@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { Template } from '../../components/Template'
+// import { Template } from '../../components/Template'
 import api from "../../services/api"
 
 export function User() {
@@ -19,7 +19,9 @@ export function User() {
     getPost()
   }, [])
   return(
-    <Template>
-    </Template>
+    <>
+    </>
+    // <Template>
+    // </Template>
   )
 }
