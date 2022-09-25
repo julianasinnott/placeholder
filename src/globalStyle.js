@@ -28,3 +28,28 @@ export const StyledButton = styled.button`
     box-shadow: var(--shadowWhite);
   }
 `
+
+export const StyledSection = styled.section`
+  border-top: 1px solid var(--secundary);
+  border-bottom: 1px solid var(--secundary);
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center; 
+  padding: 20px;
+  border-radius: 6px;
+  flex-direction: 
+  ${
+    props => props.column && 'column'
+  };
+  background-color: ${
+    props => props.gray && 'var(--secundary)'
+  };
+`
+
+export const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 30px;
+`

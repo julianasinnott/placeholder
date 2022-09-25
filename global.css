@@ -1,16 +1,15 @@
-*{
-  font-family: 'Roboto', sans-serif;
+* {
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-
-  --background: #18181B;
-  --primary: #6D28D9;
-  --secundary: #27272A;
-  --tertiary: #8B5CF6;
-  --white: #FFFFFF;
-  --shadowViolet: 1px 4px 4px #8B5CF6;
-  --shadowGrey: 2px 4px 4px #4F4C56;
-  --shadowWhite: 1px 4px 4px #FFFFFF;
-} 
+  --background: #18181b;
+  --primary: #6d28d9;
+  --secundary: #27272a;
+  --tertiary: #8b5cf6;
+  --white: #ffffff;
+  --tertiaryColorShadow: 1px 4px 4px #8b5cf6;
+  --shadowGrey: 2px 4px 4px #4f4c56;
+  --shadowWhite: 1px 4px 4px #ffffff;
+}
