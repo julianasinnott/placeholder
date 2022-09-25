@@ -1,9 +1,10 @@
-import { User } from "phosphor-react"
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { Template } from "../../components/template"
+import { UserHeader } from "../../components/UserHeader"
+import { StyledSection, StyledDiv } from "../../globalStyle"
+import { StyledPostSection, StyledTitle, StyledBody, StyledCommentName, StyledCommentBody } from "./style"
 import api from "../../services/api"
-import { StyledLink, StyledSection, StyledPostSection, StyledTitle, StyledDiv, StyledBody, StyledIcon, StyledCommentName, StyledCommentBody } from "./style"
 
 export function Post() {
   const [post, setPost] = useState('')
@@ -12,7 +13,7 @@ export function Post() {
   const { slug } = useParams()
 
   useEffect(()=> {
-    async function getPost() {
+    async function getData() {
       try {
         const post = await api.get(`/posts/${slug}`)
         const comments = await api.get(`/posts/${slug}/comments`)
@@ -20,30 +21,18 @@ export function Post() {
         setPost(post.data)
         setComments(comments.data)
         setUser(user.data)
-        console.log(user.data)
       }
       catch {
         console.error(err)
       }
     }
-    getPost()
+    getData()
   }, [])
-
+  
   return(
     <Template>
       <StyledDiv>
-        <StyledSection>
-          <StyledLink target='_blank' to={`/users/${user.id}`}>
-            <h2>
-              {user.name}
-            </h2>
-          </StyledLink>
-          <Link target='_blank' to={`/users/${user.id}`}>
-            <StyledIcon>
-              <User size={40}/> 
-            </StyledIcon>   
-          </Link>
-        </StyledSection>
+        <UserHeader user={user} />
         <StyledPostSection>
           <StyledTitle>
             {post.title}
