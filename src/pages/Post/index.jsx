@@ -1,9 +1,9 @@
 import { User } from "phosphor-react"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { Template } from "../../components/template"
 import api from "../../services/api"
-import { StyledLink, StyledSection, StyledPostSection, StyledTitle, StyledDiv, StyledBody } from "./style"
+import { StyledLink, StyledSection, StyledPostSection, StyledTitle, StyledDiv, StyledBody, StyledIcon, StyledCommentName, StyledCommentBody } from "./style"
 
 export function Post() {
   const [post, setPost] = useState('')
@@ -32,13 +32,17 @@ export function Post() {
   return(
     <Template>
       <StyledDiv>
-        <StyledSection padding>
+        <StyledSection>
           <StyledLink target='_blank' to={`/users/${user.id}`}>
             <h2>
               {user.name}
             </h2>
-          </StyledLink>   
-          <User size={40}/>
+          </StyledLink>
+          <Link target='_blank' to={`/users/${user.id}`}>
+            <StyledIcon>
+              <User size={40}/> 
+            </StyledIcon>   
+          </Link>
         </StyledSection>
         <StyledPostSection>
           <StyledTitle>
@@ -49,11 +53,13 @@ export function Post() {
           </StyledBody>
           {
             comments.map(comment => (
-              <StyledSection key={comment.id} padding>
-                <>
-                  <p>{comment.name}</p>
-                  {/* <p>{comment.body}</p> */}
-                </>
+              <StyledSection key={comment.id} column gray>
+                <StyledCommentName>
+                  {comment.name}                  
+                </StyledCommentName>
+                <StyledCommentBody>
+                  {comment.body}
+                </StyledCommentBody>
               </StyledSection>
             ))
           }
