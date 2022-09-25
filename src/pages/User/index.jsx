@@ -1,34 +1,19 @@
 import { useState } from "react"
 import { useEffect } from "react"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { Template } from '../../components/template'
 import { UserHeader } from "../../components/UserHeader"
-import { CardList } from "../../components/CardList"
 import api from "../../services/api"
 import { StyledLink, StyledParagraph, StyledTitle } from "./style"
 import { StyledDiv } from "../../globalStyle"
 import { Posts } from "../../components/Posts"
+import { useGetApiData } from "../../hooks/useGetApiData"
 
 export function User() {
-  const [user, setUser] = useState('')
-  const [posts, setPosts] = useState('')
   const { slug } = useParams()
+  const { data: user } = useGetApiData(`/users/${slug}`)
+  const { data: posts } = useGetApiData(`/users/${slug}/posts`)
 
-  useEffect(()=> {
-    async function getData() {
-      try {
-        const user = await api.get(`/users/${slug}`)
-        const posts = await api.get(`/users/${slug}/posts`) 
-        setUser(user.data)
-        setPosts(posts.data)       
-      }
-      catch {
-        console.error(err)
-      }
-    }
-    getData()
-  }, [])
-  console.log(posts)
   return(
     <Template>
       <StyledDiv>
