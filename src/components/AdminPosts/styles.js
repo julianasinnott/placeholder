@@ -18,7 +18,7 @@ export const StyledIcon = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   &:hover{
-    box-shadow: var(--shadowWhite);
+    background-color: var(--tertiary);
     transition: all 0.4s ease-in-out;
   }
 `

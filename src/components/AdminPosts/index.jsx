@@ -7,9 +7,10 @@ import api from "../../services/api";
 import { Drawer } from "../Drawer";
 import { Forms } from "../Forms";
 import { ConfirmModal } from "../ConfirmModal";
+import { useGetApiData } from "../../hooks/useGetApiData";
 
 export function AdminPosts() {
-  const [posts, setPosts] = useState([]) 
+  const posts = useGetApiData('/posts')
   const [showDrawer, setShowDrawer] = useState(false)
   const [showConfirmModal, setShowConfirmModal] = useState(false)
   const [successMessage, setSuccessMessage] = useState(false)
@@ -24,19 +25,6 @@ export function AdminPosts() {
     }
   )
   
-  useEffect(()=> {    
-    async function getPosts() {
-      try {
-        const result = await api.get('/posts')
-        setPosts(result.data)
-      }
-      catch {
-        console.error(err);
-      }
-    }
-    getPosts()
-  },[])
-
   async function createPost() {
     setLoading(true)
     try {

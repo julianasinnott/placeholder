@@ -1,27 +1,13 @@
-import { useEffect, useState } from "react";
 import { StyledButton } from "../../globalStyle";
 import { Input } from "../Input";
 import { Select } from "../Select";
 import { StyledForm } from "./styles";
-import api from "../../services/api";
+import { useGetApiData } from "../../hooks/useGetApiData";
 
 export function Forms({handleChange, handleSubmit, data, update, loading}) {
-  const [users, setUsers] = useState([])
   const defaultValue = update? data.userId : 'default'
-
-  useEffect(()=> {
-    async function getUsers() {
-      try {
-        const result = await api.get('/users')
-        const usersArray = result.data.map(user => ({id: user.id, name: user.name}))
-        setUsers(usersArray)
-      }
-      catch {
-        console.error(err);
-      }
-    }
-    getUsers()
-  },[])
+  const users = useGetApiData('/users')
+  const usersOptions = users.map(user => ({id: user.id, name: user.name}))
 
   return(
     <StyledForm
@@ -47,7 +33,7 @@ export function Forms({handleChange, handleSubmit, data, update, loading}) {
       <Select 
         name='userId'
         title='Usuário'
-        data={users}
+        data={usersOptions}
         defaultValue={defaultValue}
         handleChange={handleChange} 
         update={update}
