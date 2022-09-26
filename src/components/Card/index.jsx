@@ -1,14 +1,16 @@
-import { StyledCard, StyledTitle, StyledContent } from "./styles"
+import { StyledCard, StyledTitle, StyledContent, StyledLink } from "./styles"
 
 export function Card({data}) {
   return(
-    <StyledCard>
-      <StyledTitle>
-        {data.title}
-      </StyledTitle> 
-      <StyledContent>
-        {data.body}
-      </StyledContent>
-    </StyledCard>
+    <StyledLink target="blank" to={`/posts/${data.id}/${data.userId}`}>
+        <StyledCard>
+        <StyledTitle>
+          {data.title}
+        </StyledTitle> 
+        <StyledContent>
+          {data.body}
+        </StyledContent>
+      </StyledCard>
+    </StyledLink>
   )
 }

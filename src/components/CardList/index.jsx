@@ -17,7 +17,7 @@ export function CardList({data, deletePost, setShowDrawer, setForm, setUpdate, s
         {data.title}
       </StyledTitle>
       <StyledDiv>
-        <Link target="blank" to={`/posts/${data.id}`}>
+        <Link target="blank" to={`/posts/${data.id}/${data.userId}`}>
           <StyledIcon>
             <Eye />
           </StyledIcon>        

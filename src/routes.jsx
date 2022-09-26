@@ -15,7 +15,7 @@ export function PlaceholderRoutes() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="posts/:slug" element={<Post />} />
+          <Route path="posts/:postId/:userId" element={<Post />} />
           <Route path="users/:slug" element={<User />} />
         </Routes>
     </BrowserRouter>

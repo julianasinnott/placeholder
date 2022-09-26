@@ -1,45 +1,20 @@
-import { User } from "phosphor-react"
-import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Template } from "../../components/template"
-import api from "../../services/api"
-import { StyledLink, StyledSection, StyledPostSection, StyledTitle, StyledDiv, StyledBody } from "./style"
+import { UserHeader } from "../../components/UserHeader"
+import { StyledSection, StyledDiv } from "../../globalStyle"
+import { StyledPostSection, StyledTitle, StyledBody, StyledCommentName, StyledCommentBody } from "./style"
+import { useGetApiData } from "../../hooks/useGetApiData"
 
 export function Post() {
-  const [post, setPost] = useState('')
-  const [comments, setComments] = useState([])
-  const [user, setUser] = useState('')
-  const { slug } = useParams()
-
-  useEffect(()=> {
-    async function getPost() {
-      try {
-        const post = await api.get(`/posts/${slug}`)
-        const comments = await api.get(`/posts/${slug}/comments`)
-        const user = await api.get(`/users/${post.data.userId}`)
-        setPost(post.data)
-        setComments(comments.data)
-        setUser(user.data)
-        console.log(user.data)
-      }
-      catch {
-        console.error(err)
-      }
-    }
-    getPost()
-  }, [])
+  const { postId, userId } = useParams()
+  const post = useGetApiData(`/posts/${postId}`)
+  const comments = useGetApiData(`/posts/${postId}/comments`)
+  const user = useGetApiData(`/users/${userId}`)
 
   return(
     <Template>
-      <StyledDiv>
-        <StyledSection padding>
-          <StyledLink target='_blank' to={`/users/${user.id}`}>
-            <h2>
-              {user.name}
-            </h2>
-          </StyledLink>   
-          <User size={40}/>
-        </StyledSection>
+      <StyledDiv padding='0 30px'>
+        <UserHeader user={user} padding='20px' />
         <StyledPostSection>
           <StyledTitle>
             {post.title}
@@ -49,11 +24,13 @@ export function Post() {
           </StyledBody>
           {
             comments.map(comment => (
-              <StyledSection key={comment.id} padding>
-                <>
-                  <p>{comment.name}</p>
-                  {/* <p>{comment.body}</p> */}
-                </>
+              <StyledSection key={comment.id} padding = '20px' column grey>
+                <StyledCommentName>
+                  {comment.name}                  
+                </StyledCommentName>
+                <StyledCommentBody>
+                  {comment.body}
+                </StyledCommentBody>
               </StyledSection>
             ))
           }
