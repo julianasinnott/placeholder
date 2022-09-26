@@ -26,9 +26,10 @@ export const StyledBody = styled.p`
 
 export const StyledCommentName = styled.p`
  font-size: 20px;
+ align-self: flex-start;
 `
 
 export const StyledCommentBody = styled.p`
   font-weight: 100;
-  text-align: center;
+  align-self: flex-start;
 `
