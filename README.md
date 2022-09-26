@@ -1,14 +1,16 @@
 <h1 align='center'> Placeholder </h1>
 
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/julianasinnott/goVegan.svg?color=6D28D9">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/julianasinnott/placeholder.svg?color=6D28D9">
 
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/julianasinnott/goVegan.svg?color=FFFFFF">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/julianasinnott/placeholder.svg?color=FFFFFF">
   
-  <a href="https://github.com/julianasinnott/goVegan/commits/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/julianasinnott/goVegan.svg?color=6D28D9">
+  <a href="https://github.com/julianasinnott/placeholder/commits/main">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/julianasinnott/placeholder.svg?color=6D28D9">
   </a>
 </p>
+
+![image](https://user-images.githubusercontent.com/100887684/192181747-62a9be4d-16ad-42f0-b673-77c14d9a6575.png)
 
 ## | Descrição |
 
