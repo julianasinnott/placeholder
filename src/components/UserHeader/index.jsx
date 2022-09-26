@@ -3,9 +3,9 @@ import { StyledLink, StyledIcon } from "./style"
 import { Link } from "react-router-dom"
 import { User } from "phosphor-react"
 
-export function UserHeader({user}) {
+export function UserHeader({user, spaceBetween, padding}) {
   return(
-    <StyledSection>
+    <StyledSection spaceBetween={spaceBetween} padding={padding}>
       <StyledLink target='_blank' to={`/users/${user.id}`}>
         <h2>
           {user.name}

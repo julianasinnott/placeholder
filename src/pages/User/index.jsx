@@ -1,46 +1,57 @@
-import { useState } from "react"
-import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { Template } from '../../components/template'
 import { UserHeader } from "../../components/UserHeader"
-import api from "../../services/api"
-import { StyledLink, StyledParagraph, StyledTitle } from "./style"
-import { StyledDiv } from "../../globalStyle"
+import { StyledUserSection, StyledLink, StyledParagraph, StyledPostSection } from "./style"
+import { StyledDiv, StyledTitle } from "../../globalStyle"
 import { Posts } from "../../components/Posts"
 import { useGetApiData } from "../../hooks/useGetApiData"
+import { EnvelopeSimple, Link, Phone } from "phosphor-react"
 
 export function User() {
   const { slug } = useParams()
-  const { data: user } = useGetApiData(`/users/${slug}`)
-  const { data: posts } = useGetApiData(`/users/${slug}/posts`)
+  const user = useGetApiData(`/users/${slug}`)
+  const posts = useGetApiData(`/users/${slug}/posts`)
 
   return(
     <Template>
-      <StyledDiv>
-        <UserHeader user={user}/>
-        <StyledParagraph>
-          {user.username}
-        </StyledParagraph>
-        <StyledParagraph>
-          <StyledLink>
-            {user.email}
-          </StyledLink>
-        </StyledParagraph>
-        <StyledParagraph>
-          <StyledLink> 
-            {user.website} 
-          </StyledLink>
-        </StyledParagraph>
-        <StyledParagraph>
-          phone: {user.phone}
-        </StyledParagraph>
-        <StyledTitle>
-          Posts de {user.name}
-        </StyledTitle>
-      </StyledDiv>    
-      {
-        posts && <Posts data={posts} />
-      }
+      <StyledUserSection>
+        <StyledDiv padding='0 30px'>
+          <UserHeader user={user} spaceBetween={true} padding='20px 2px'/>
+          <StyledParagraph>
+            {user.username}
+          </StyledParagraph>
+          <StyledParagraph>
+            <EnvelopeSimple />
+            <a href={`mailto:${user.email}`}>
+              <StyledLink>
+                {user.email}
+              </StyledLink>
+            </a>          
+          </StyledParagraph>
+          <StyledParagraph>
+            <Link />
+            <a href={`http://${user.website}`} target="_blank">
+              <StyledLink>
+                {user.website}
+              </StyledLink>
+            </a>
+          </StyledParagraph>
+          <StyledParagraph>
+            <Phone />
+            <a href={`tel:+${user.phone}`}>
+              <StyledLink>
+                {user.phone}
+              </StyledLink>
+            </a>
+          </StyledParagraph>
+        </StyledDiv>    
+        <StyledPostSection>
+          <StyledTitle>
+            {user.name} Posts
+          </StyledTitle>
+          { posts && <Posts data={posts} /> }
+        </StyledPostSection>         
+      </StyledUserSection>
     </Template>
   )
 }

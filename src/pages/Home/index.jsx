@@ -1,5 +1,6 @@
 import { Posts } from "../../components/Posts";
 import { Template } from "../../components/template";
+import { StyledDiv, StyledTitle } from "../../globalStyle";
 import { useGetApiData } from "../../hooks/useGetApiData";
 
 export function Home() {
@@ -7,7 +8,12 @@ export function Home() {
 
   return(
     <Template>
-      <Posts data={posts} />
+      <StyledDiv>
+        <StyledTitle>
+          Placeholder Posts
+        </StyledTitle>
+        <Posts data={posts} />
+      </StyledDiv>
     </Template>
   )
 }

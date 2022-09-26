@@ -29,6 +29,7 @@ export const StyledTitle = styled.h2`
 `;
 export const StyledContent = styled.p`
   font-size: 16px;
+  font-weight: 100;
 `;
 
 export const StyledLink = styled(Link)`

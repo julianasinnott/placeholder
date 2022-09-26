@@ -13,8 +13,8 @@ export function Post() {
 
   return(
     <Template>
-      <StyledDiv>
-        <UserHeader user={user} />
+      <StyledDiv padding='0 30px'>
+        <UserHeader user={user} padding='20px' />
         <StyledPostSection>
           <StyledTitle>
             {post.title}
@@ -24,7 +24,7 @@ export function Post() {
           </StyledBody>
           {
             comments.map(comment => (
-              <StyledSection key={comment.id} column gray>
+              <StyledSection key={comment.id} padding = '20px' column grey>
                 <StyledCommentName>
                   {comment.name}                  
                 </StyledCommentName>
