@@ -8,11 +8,11 @@ export function Home() {
 
   return(
     <Template>
-      <StyledDiv>
-        <StyledTitle>
+      <StyledDiv padding='40px 20px'>
+        <StyledTitle margin800px='20px'>
           Placeholder Posts
         </StyledTitle>
-        <Posts data={posts} />
+        <Posts data={posts} width900px='100%' />
       </StyledDiv>
     </Template>
   )

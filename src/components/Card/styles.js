@@ -22,6 +22,23 @@ export const StyledCard = styled.div`
     box-shadow: var(--tertiaryColorShadow);
     transition: all 0.4s ease-in-out;
   }
+  @media only screen and (max-width: 1130px) {
+    max-width: 
+    ${
+      props => props.width1130px
+    }
+    ;
+  }
+  @media only screen and (max-width: 900px) {
+    max-width: 
+    ${
+      props => props.width900px
+    }
+    ;
+  }
+  @media only screen and (max-width: 380px) {
+    height: 250px;
+  }
 `;
 export const StyledTitle = styled.h2`
   font-size: 20px;
