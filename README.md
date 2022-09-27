@@ -33,7 +33,7 @@ os recursos relacionados:
 
 https://placeholder-delta.vercel.app/
 
--- Para visualizar a área administrativa acesse a rota '/admin'
+--> Para visualizar a área administrativa acesse a rota '/admin'
 
 Ou acesse o link:
 
