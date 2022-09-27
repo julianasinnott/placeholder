@@ -15,7 +15,7 @@ export function User() {
   return(
     <Template>
       <StyledUserSection>
-        <StyledDiv padding='0 30px'>
+        <StyledDiv  padding='30px'>
           <UserHeader user={user} spaceBetween={true} padding='20px 2px'/>
           <StyledParagraph>
             {user.username}
@@ -46,10 +46,10 @@ export function User() {
           </StyledParagraph>
         </StyledDiv>    
         <StyledPostSection>
-          <StyledTitle>
+          <StyledTitle margin650px='0'>
             {user.name} Posts
           </StyledTitle>
-          { posts && <Posts data={posts} /> }
+          { posts && <Posts width1130px='100%' data={posts} /> }
         </StyledPostSection>         
       </StyledUserSection>
     </Template>

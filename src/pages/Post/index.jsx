@@ -12,11 +12,11 @@ export function Post() {
   const user = useGetApiData(`/users/${userId}`)
 
   return(
-    <Template>
+    <Template paddingMobile='20px 0'>
       <StyledDiv padding='0 30px'>
         <UserHeader user={user} padding='20px' />
         <StyledPostSection>
-          <StyledTitle>
+          <StyledTitle margin='20px 0 0' marginMobile='10px 0 0'>
             {post.title}
           </StyledTitle>
           <StyledBody>
