@@ -33,6 +33,12 @@ os recursos relacionados:
 
 https://placeholder-delta.vercel.app/
 
+-- Para visualizar a área administrativa acesse a rota '/admin'
+
+Ou acesse o link:
+
+https://placeholder-delta.vercel.app/admin
+
 ## | Create App |
 
 Este App foi criado com [Vite](https://vitejs.dev/) <br>
