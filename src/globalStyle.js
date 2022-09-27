@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledLabel = styled.label`
  display: flex;
@@ -63,6 +63,9 @@ export const StyledDiv = styled.div`
   ${
     props => props.padding
   };
+  @media only screen and (max-width: 800px) {
+    padding: 0 10px;
+  }
 `
 
 export const StyledTitle = styled.h1` 
@@ -72,4 +75,14 @@ export const StyledTitle = styled.h1`
   text-align: center;
   margin: 0 0 40px 0;
   border-bottom: 1px solid var(--tertiary);
+  @media only screen and (max-width: 800px) {
+    margin: ${
+      props => props.margin800px
+    };
+  }
+  @media only screen and (max-width: 650px) {
+    margin: ${
+      props => props.margin650px
+    };  
+  }
 `

@@ -8,6 +8,7 @@ import { Drawer } from "../Drawer";
 import { Forms } from "../Forms";
 import { ConfirmModal } from "../ConfirmModal";
 import { useGetApiData } from "../../hooks/useGetApiData";
+import { StyledTitle } from "../../globalStyle";
 
 export function AdminPosts() {
   const posts = useGetApiData('/posts')
@@ -104,8 +105,11 @@ export function AdminPosts() {
       update ? updatePost() : createPost()
     }
 
-    return(
-      <StyledMain>
+  return(
+    <StyledMain>
+      <StyledTitle>
+        Placeholder Posts
+      </StyledTitle>
       {
         showConfirmModal &&
         <ConfirmModal
@@ -131,15 +135,15 @@ export function AdminPosts() {
       }
       {
         showDrawer && 
-        <Drawer handleClick={setShowDrawer}>
-          <Forms 
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            data={form}
-            update={update}
-            loading={loading}
-          />
-        </Drawer>
+         <Drawer handleClick={setShowDrawer}>
+            <Forms 
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              data={form}
+              update={update}
+              loading={loading}
+            />
+          </Drawer>
       }
       <StyledIcon>
         <Plus

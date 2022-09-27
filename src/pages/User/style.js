@@ -14,9 +14,29 @@ export const StyledLink = styled.p`
 
 export const StyledUserSection = styled.div `
   display: flex;
+  @media only screen and (max-width: 650px) {
+    flex-direction: column;
+    gap: 40px;
+  }
 `
-
 export const StyledPostSection = styled(StyledUserSection)`
   flex-direction: column;
+  padding-top: 30px;
+  @media only screen and (max-width: 1130px) {
+    width: 250%;
+    padding: 30px 10px
+  }
+  @media only screen and (max-width: 940px) {
+    width: 150%;
+  }
+  @media only screen and (max-width: 800px) {
+    padding-top: 20px;
+  }
+  @media only screen and (max-width: 650px) {
+    width: 100%;
+    padding: 0;
+  }
 `
+
+
 
