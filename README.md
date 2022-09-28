@@ -79,3 +79,4 @@ $ `npm run dev`
 <hr>
 
 #### Abra http://localhost:5173/ em seu navegador 
+#### Para a área administrativa acesse http://localhost:5173/admin
