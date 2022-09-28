@@ -7,7 +7,7 @@ export function Home() {
   const posts = useGetApiData('/posts')
 
   return(
-    <Template>
+    <Template paddingMobile='10px'>
       <StyledDiv padding='40px 20px'>
         <StyledTitle margin800px='20px'>
           Placeholder Posts

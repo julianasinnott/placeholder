@@ -11,8 +11,8 @@ export const StyledIcon = styled.div`
   display: flex;
   align-items: center;
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  bottom: 40px;
+  right: 40px;
   background-color: var(--primary);
   border-radius: 50%;
   padding: 5px;
@@ -21,5 +21,9 @@ export const StyledIcon = styled.div`
   &:hover{
     background-color: var(--tertiary);
     transition: all 0.4s ease-in-out;
+  }
+  @media only screen and (max-width: 600px) {
+    bottom: 30px;
+    right: 30px;
   }
 `

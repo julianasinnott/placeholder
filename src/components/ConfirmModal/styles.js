@@ -22,6 +22,14 @@ export const StyledModal = styled.div`
   right: ${
     props => props.horizontalPosition 
   };
+  @media only screen and (max-width: 450px) {
+    padding: ${
+      props => props.paddingMobile
+    };
+    right: ${
+      props => props.horizontalPositionMobile
+    };
+  }
 `
 
 export const StyledModalTitle = styled.div`

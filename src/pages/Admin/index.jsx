@@ -3,7 +3,7 @@ import { AdminPosts } from "../../components/AdminPosts";
 
 export function Admin() {
   return (
-    <Template>
+    <Template paddingMobile='10px'>
       <AdminPosts />
     </Template>
   )
