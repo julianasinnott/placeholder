@@ -107,13 +107,15 @@ export function AdminPosts() {
 
   return(
     <StyledMain>
-      <StyledTitle>
+      <StyledTitle margin650px='0 0 30px 0'>
         Placeholder Posts
       </StyledTitle>
       {
         showConfirmModal &&
         <ConfirmModal
-          horizontalPosition={successMessage ? "calc(50% - 200px)" : "calc(50% - 150px)"}
+          horizontalPosition={successMessage ? "calc(50% - 200px)" : "calc(50% - 140px)"}
+          horizontalPositionMobile={successMessage && "calc(50% - 170px)"}
+          paddingMobile={successMessage && "14px"}
           titleModal={successMessage? 'Enviado com sucesso!' : 'Excluir Post?'}
           Xicon={successMessage? false : true}
           closeModal={handleClick}
